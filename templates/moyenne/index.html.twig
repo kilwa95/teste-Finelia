@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MoyenneController!{% endblock %}
+
+{% block body %}
+
+<div class="vp-container">
+
+    <header>
+        <h2 class="vp-logo">
+            <i class="fas fa-crown"></i>
+            <a href="#">Scolaire</a>
+          </h2>
+          <ul>
+            <li><a href="{{path('homepage')}}">Saisir notes</a></li>
+            <li><a href="{{path('list_moyenne')}}">voir les notes</a></li>
+          </ul>
+    </header>
+
+
+
+    <section class="container listEtudiantes">
+    <table class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Prenom</th>
+      <th scope="col">Moyenne</th>
+    </tr>
+  </thead>
+  <tbody>
+
+ {% for etudiante in etudiantes %}
+    <tr>
+      <th scope="row">{{etudiante['id']}}</th>
+      <td>{{etudiante['nom']}}</td>
+      <td>{{etudiante['prenom']}}</td>
+      <td>{{etudiante['moyenne']}}</td>
+    </tr>
+{% endfor %}
+  </tbody>
+</table>
+    </section>
+
+ </div>
+
+{% endblock %}

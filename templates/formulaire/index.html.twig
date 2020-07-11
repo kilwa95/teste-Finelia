@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello FormulaireController!{% endblock %}
+
+{% block body %}
+<div class="vp-container">
+
+    <header>
+        <h2 class="vp-logo">
+            <i class="fas fa-crown"></i>
+            <a href="#">Scolaire</a>
+          </h2>
+          <ul>
+            <li><a href="{{path('homepage')}}">Saisir notes</a></li>
+            <li><a href="{{path('list_moyenne')}}">voir les notes</a></li>
+          </ul>
+    </header>
+
+
+    <section class="formulaire container">
+        <div class="titre"><h2>Fomulaire saisir notes</h2></div>
+
+        <div class="form">
+            <form method="POST" action="{{path('add_note')}}"> 
+                <div class="form-row group1">
+                    <div class="col-5">
+                        <label for="">Matiere</label>
+                    
+                        <select class="form-control" name="matiere">
+                        {% for matier in matiers %}
+                              <option>{{matier['matier']}}</option>
+                             {% endfor %}
+                        </select>
+                        
+                    </div>
+  
+                    <div class="col-5">
+                        <label for="">Etudiant</label>
+                        <select class="form-control" name="etudiant">
+                       {% for etudiant in etudiants %}
+                              <option>{{etudiant['nom']}}</option>
+                             {% endfor %}
+                       </select>
+                    </div>
+                </div>
+
+                <div class="form-row group2">
+                    <div class="col-5">
+                        <label for="">Cofficient</label>
+                        <input type="text" name="cofficient" class="form-control" />
+                    </div>
+    
+                    <div class="col-5">
+                        <label for="">Notes</label>
+                        <input type="text" name="note" class="form-control" />
+                    </div>
+                </div>
+
+                <button class="btn btn-danger">Valider</button>
+                
+            </form> 
+        </div>
+    </section
+
+ </div>
+
+{% endblock %}

@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.vp-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+    padding: 1rem 2rem;
+    background: #333;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+
+
+  ul {
+    list-style: none;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+
+  .vp-logo {
+    margin-bottom: 0;
+    font-family: "Long Cang", cursive;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .vp-logo i {
+    color: #f1c40f;
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+  }
+  
+  .vp-logo a {
+    font-size: 3rem;
+  }
+
+  .vp-logo a:hover {
+    color: #f1c40f;
+  }
+  
+  header ul {
+    display: flex;
+    flex-flow: row nowrap;
+    list-style: none;
+  }
+  
+  header ul li {
+    padding: 1rem;
+  }
+  
+  header ul li a:hover {
+    color: #f1c40f;
+  }
+  
+  header a {
+    color: white;
+  }
+  
+  .vp {
+    flex: auto;
+    height: 600px;
+  
+  }
+  .formulaire{
+      margin-top: 100px;
+      display: flex;
+      flex-direction: column;   
+  }
+  .form{
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+  }
+  .group2{
+    margin-top: 30px;
+  }
+  button{
+      margin-top: 20px;
+  }
+
+  .listEtudiantes{
+    margin-top: 100px;
+  }
+ 
+ 
