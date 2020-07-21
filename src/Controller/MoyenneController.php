@@ -15,7 +15,9 @@ class MoyenneController extends AbstractController
     public function index(EtudiantRepository $etudiantRepository)
     {
         $etudiants = $etudiantRepository->findAll();
-        $notesEtudianteJson = [];
+        dump( $etudiants);
+        die();
+        $notesEtudianteSend = [];
 
         foreach( $etudiants as  $etudiant){
             $somme = 0;
@@ -27,9 +29,9 @@ class MoyenneController extends AbstractController
 
           
             foreach($notes as $note){
-                $noter = $note->getNote();
+                $noteEtudiante = $note->getNote();
                 $cofficient = $note->getCofficient();
-                $somme = $somme + ($noter * $cofficient);
+                $somme = $somme + ($noteEtudiante * $cofficient);
                 $sommeCofficient = $sommeCofficient +  $cofficient;
                 $moyenne = $somme / $sommeCofficient;
 
@@ -51,13 +53,13 @@ class MoyenneController extends AbstractController
                 "moyenne" => $etudiant->getMoyenne(),
             ];
             
-            $notesEtudianteJson[] =  $objetFinale;
+            $notesEtudianteSend[] =  $objetFinale;
         }
 
 
 
         return $this->render('moyenne/index.html.twig',[
-            'etudiantes' => $notesEtudianteJson
+            'etudiantes' => $notesEtudianteSend
         ]);
     }
 }
